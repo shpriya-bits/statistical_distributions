@@ -13,8 +13,6 @@ def plot_histogram(self):
         plt.xlabel('data')
         plt.ylabel('count')
 
-
-
     def pdf(self, x):
         """Probability density function calculator for the gaussian distribution.
 

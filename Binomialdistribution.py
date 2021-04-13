@@ -24,10 +24,6 @@ class Binomial(Distribution):
         self.n = size
 
     def calculate_mean(self):
-
-        avg = float(self.p * self.n )
-        self.mean = avg
-        return self.mean
         """Function to calculate the mean from p and n
 
         Args:
@@ -37,10 +33,12 @@ class Binomial(Distribution):
             float: mean of the data set
 
         """
-    def calculate_stdev(self):
-        self.stdev = math.sqrt(self.n * self.p * (1-self.p))
-        return self.stdev
 
+        avg = float(self.p * self.n )
+        self.mean = avg
+        return self.mean
+
+    def calculate_stdev(self):
         """Function to calculate the standard deviation from p and n.
 
         Args:
@@ -50,16 +48,26 @@ class Binomial(Distribution):
             float: standard deviation of the data set
 
         """
+        self.stdev = math.sqrt(self.n * self.p * (1-self.p))
+        return self.stdev
+
+    def calculate_variance(self):
+        """Function to calculate the variance from the standard deviation.
+
+        Args:
+            None
+
+        Returns:
+            float: variance of the data set
+
+        """
+
+        self.variance = math.square(self.stdev)
+        return self.variance
+
 
     def replace_stats_with_data(self):
 
-        self.n = len(self.data)
-        pos = sum([x for x in data if x == 1])
-        self.p = float(pos / trials)
-        self.mean = self.calculate_mean
-        self.stdev = self.calculate_stdev
-
-        return (self.p ,self.n)
         """Function to calculate p and n from the data set. The function updates the p and n variables of the object.
 
         Args:
@@ -70,6 +78,15 @@ class Binomial(Distribution):
             float: the n value
 
         """
+
+        self.n = len(self.data)
+        pos = sum([x for x in data if x == 1])
+        self.p = float(pos / trials)
+        self.mean = self.calculate_mean
+        self.stdev = self.calculate_stdev
+
+        return (self.p ,self.n)
+
     def plot_bar(self):
 
         """Function to output a histogram of the instance variable data using
@@ -87,6 +104,7 @@ class Binomial(Distribution):
         plt.ylabel("Count")
 
 
+    def pdf(self, k):
         """Probability density function calculator for the binomial distribution.
 
         Args:
@@ -96,13 +114,11 @@ class Binomial(Distribution):
         Returns:
             float: probability density function output
         """
-    def pdf(self, k):
 
         coef = math.factorial(self.n)/(math.factorial(k)* math.factorial(self.n - k))
         probf = coef * (self.p**k) * (1 - self.p)**(self.n - k)
 
         return probf
-    # write a method to plot the probability density function of the binomial distribution
 
     def pdf_plot(self):
 
@@ -130,19 +146,19 @@ class Binomial(Distribution):
         plt.ylabel("Probability")
         plt.show()
         return (x, y)
-    # write a method to output the sum of two binomial distributions. Assume both distributions have the same p value.
+
 
     def __add__(self,other):
 
-        # """Function to add together two Binomial distributions with equal p
-        #
-        # Args:
-        #     other (Binomial): Binomial instance
-        #
-        # Returns:
-        #     Binomial: Binomial distribution
-        #
-        # """
+        """Function to add together two Binomial distributions with equal p
+
+        Args:
+            other (Binomial): Binomial instance
+
+        Returns:
+            Binomial: Binomial distribution
+
+        """
 
         try:
             assert self.p == other.p, 'p values are not equal'
