@@ -6,6 +6,8 @@ Kindly add Relevant Code Comment
 Example
 <!-- Function to add Histogram : Created by Priya: 13-04-21 -->
 
+How to use this project files
+
 Prerequisites
 -------------
 Matplotlib is required to generate and view distribution graphs
