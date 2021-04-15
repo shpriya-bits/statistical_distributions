@@ -1,9 +1,5 @@
 Statistical Distributions
 
-PLEASE READ THIS FILE BEFORE YOU EDIT THE CODE
-Kindly add Relevant Code Comment
-
-Example
 <!-- Function to add Histogram : Created by Priya: 13-04-21 -->
 
 How to use this project files
