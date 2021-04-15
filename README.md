@@ -22,4 +22,7 @@ import numpy;
 import matplotlib.pyplot;
 import seaborn as sns;
 ```
-
+Calculations:
+-------------
+Variance 
+Histogram

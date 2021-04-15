@@ -8,3 +8,4 @@ def variance(data):
      # Variance
      variance = sum(deviations) / n
      return variance
+     print variance
