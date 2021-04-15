@@ -25,5 +25,8 @@ import seaborn as sns;
 ---
 Calculations:
 ```
-Variance 
-Histogram
+*Variance 
+*Histogram
+*Median
+*Housing    
+*Guassian
