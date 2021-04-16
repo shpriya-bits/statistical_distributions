@@ -1,12 +1,8 @@
 
-# PLEASE READ THIS FILE BEFORE YOU EDIT THE CODE
-# KINDLY ADD RELEVANT CODE COMMENT 
-=======
-Statistical Distributions
+# Statistical Distributions
+
 
 <!-- Function to add Histogram : Created by Priya: 13-04-21 -->
-
-How to use this project files
 
 Prerequisites
 -------------
