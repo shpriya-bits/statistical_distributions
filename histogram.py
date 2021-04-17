@@ -72,4 +72,3 @@ def plot_histogram(self):
         plt.show()
 
         return x, y
-
